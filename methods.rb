@@ -25,10 +25,11 @@
     puts
     print "Which book do you want to lend (by name): "
     book_title = gets.chomp
-
     puts
     puts "Here are all the people in the library"
+    puts
     puts library.list_people
+    puts
     print "Which person is going to borrow it (by name): "
     person_name = gets.chomp
 
@@ -52,10 +53,8 @@
     book_title = gets.chomp
 
     returner.return(book_title)
-    # library.return_book(book)
+    library.return_book(book_title)
   end
-
-
 
   def list_people(library)
     puts library.list_people

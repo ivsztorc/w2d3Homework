@@ -12,7 +12,7 @@ class Library
     person = people[person_name]
     book = books.delete(book_title)
 
-    person.borrow(book)
+    person.lend(book)
   end
 
   def add_person(person)
@@ -25,7 +25,7 @@ class Library
 
   def get_person(person_name)
     person = @people[person_name]
-    @books.delete(book_title)
+    book = books.delete(book)
   end
 
   def get_book(book_title)

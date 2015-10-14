@@ -11,7 +11,7 @@ class Person
     books[book.title] = book
   end
 
-  def borrow(book)
+  def lend(book)
     books[book.title] = book
   end
 
