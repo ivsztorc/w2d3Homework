@@ -1,28 +1,21 @@
   def get_person(person_name)
     puts library.list_people
     puts
+    puts "Here are all the people in the library"
     print "Which person is returning the book (by name): "
     person_name = gets.chomp
 
+    library.get(list_people, person_name)
+
   end
 
-
-
-
-  def return_book(library)
+  def get_book(library, book_title)
     puts library.list_books
     puts
     print "Which book do you want to return (by name): "
     book_title = gets.chomp
 
-    puts
-    puts "Here are all the people in the library"
-    puts library.list_people
-    print "Which person is returning the book (by name): "
-    person_name = gets.chomp
-
-
-    library.return(person_name, book_title)
+    library.get(book_title)
 
   end
 
@@ -44,8 +37,6 @@
 
   end
 
-
-
   def list_books(library)
     puts library.list_books
 
@@ -53,12 +44,14 @@
 
   def return_book(library)
     puts library.list_people
+    puts 'Choose name of person: '
     person_name = gets.chomp
-    library.get_person(person_name)
-    
+    returner = library.get_person(person_name)
+    puts 'Choose book: '
+    puts returner.list_books
+    book_title = gets.chomp
 
-
-
+    returner.return(book_title)
     # library.return_book(book)
   end
 

@@ -8,13 +8,6 @@ class Library
     @people = {}
   end
 
-  def return(person_name, book_title)
-    person = people[person_name]
-    book = books.return(book_title)
-
-    person.return(book)
-  end
-
   def lend(person_name, book_title)
     person = people[person_name]
     book = books.delete(book_title)
@@ -29,11 +22,22 @@ class Library
   def add_book(book)
     books[book.title] = book
   end
+
   def get_person(person_name)
-    people[list_people] = person
+    person = @people[person_name]
+    @books.delete(book_title)
   end
 
+  def get_book(book_title)
+    books = library[book_title]
+  end
 
+  def return_book(person_name, book_title)
+    person = people[person_name]
+    book = books.return(book_title)
+
+    person.return(book)
+  end
 
   def list_books
     if books.empty?
@@ -49,7 +53,7 @@ class Library
     if people.empty?
       "billy no mates"
     else
-      people.map do |key, person| 
+      @people.map do |key, person| 
         person.pretty_string
       end.join("\n")
     end

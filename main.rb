@@ -50,12 +50,3 @@ gets
 response = menu
 
 end
-
-
-
-
-
-
-
-
-binding.pry;''
