@@ -1,3 +1,14 @@
+  def get_person(person_name)
+    puts library.list_people
+    puts
+    print "Which person is returning the book (by name): "
+    person_name = gets.chomp
+
+  end
+
+
+
+
   def return_book(library)
     puts library.list_books
     puts
@@ -40,12 +51,19 @@
 
   end
 
-  def return_book
-    puts library.list_books
+  def return_book(library)
+    puts library.list_people
+    person_name = gets.chomp
+    library.get_person(person_name)
+    
 
-    library.return_book(book)
+
+
+    # library.return_book(book)
   end
-  
+
+
+
   def list_people(library)
     puts library.list_people
   end

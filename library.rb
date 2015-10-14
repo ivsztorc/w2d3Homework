@@ -29,6 +29,10 @@ class Library
   def add_book(book)
     books[book.title] = book
   end
+  def get_person(person_name)
+    people[list_people] = person
+  end
+
 
 
   def list_books
