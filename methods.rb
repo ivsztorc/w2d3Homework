@@ -49,7 +49,6 @@
     person_name = gets.chomp
     returner = library.get_person(person_name)
     puts 'Choose book: '
-    puts returner.list_books
     book_title = gets.chomp
 
     returner.return(book_title)
